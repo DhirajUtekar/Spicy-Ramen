@@ -1,0 +1,286 @@
+/* =====================
+   DAY THEME (DEFAULT)
+===================== */
+:root {
+  --bg: #f6f1e7; /* Washi paper */
+  --text: #1c1c1c; /* Ink */
+  --muted: #5f5f5f;
+  --accent: #c1121f; /* Torii red */
+  --border: #d8cfc4;
+  --card: rgba(255, 255, 255, 0.75);
+}
+
+/* =====================
+   NIGHT THEME (INK BLACK)
+===================== */
+body.light {
+  --bg: #0f0f0f; /* Ink black */
+  --text: #f1f1f1;
+  --muted: #b0b0b0;
+  --accent: #e63946; /* Lantern red */
+  --border: #2a2a2a;
+  --card: rgba(25, 25, 25, 0.9);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+  color: var(--text);
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  letter-spacing: 4px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 14px;
+  position: relative;
+}
+
+.nav-links a:focus {
+  outline: 2px dashed var(--accent);
+  outline-offset: 4px;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.theme-toggle::after {
+  content: " 🌙";
+}
+
+body.light .theme-toggle::after {
+  content: " ☀️";
+}
+
+/* HERO */
+.hero {
+  padding: 90px 20px;
+  max-width: 720px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: var(--muted);
+}
+
+/* VERTICAL JAPANESE TEXT */
+.vertical-jp {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 4px;
+  color: var(--accent);
+  margin: 40px auto;
+  font-size: 14px;
+}
+
+/* TORII HEADER */
+.torii-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+.torii-header span {
+  width: 6px;
+  height: 42px;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(230, 57, 70, 0.4);
+}
+
+.torii-header h2 {
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+/* BUTTON – HANKO STYLE */
+.btn {
+  margin-top: 35px;
+  padding: 14px 42px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
+}
+
+/* MENU – ICHIRAN STYLE */
+.menu {
+  padding: 80px 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.menu-items {
+  max-width: 500px;
+  margin: auto;
+}
+
+.item {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 30px;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.item:hover {
+  border-color: var(--accent);
+}
+
+.item:focus {
+  outline: 2px dashed var(--accent);
+  outline-offset: 4px;
+}
+
+.item span {
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* FEATURED ITEM SEAL */
+.item.featured::after {
+  content: "おすすめ";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background: var(--accent);
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 12px;
+  transform: rotate(-8deg);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  max-width: 400px;
+  margin: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  padding: 12px;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px dashed var(--accent);
+  outline-offset: 3px;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .vertical-jp {
+    writing-mode: horizontal-tb;
+    letter-spacing: 2px;
+  }
+}
+
+/* MENU ITEM IMAGES */
+.item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+/* NIGHT MODE IMAGE TUNING */
+body.light .hero-image img,
+body.light .item img {
+  filter: brightness(0.9) contrast(1.1)
+    drop-shadow(0 25px 50px rgba(230, 57, 70, 0.25));
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero-with-image {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+}
